@@ -31,7 +31,7 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           sx={{
             borderRadius: '50%',
             height: '180px',
-            width: '180px',
+            width: '100%',
             mb: 2,
             border: '1px solid #e3e3e3'
           }} />

@@ -1,7 +1,7 @@
-import { Box, CardContent, CardMedia, Typography } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { demoProfilePicture } from "../utils/constants";
+import { Box, CardContent, CardMedia, Typography } from '@mui/material'
+import { CheckCircle } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
+import { demoProfilePicture } from '../utils/constants'
 const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
@@ -16,8 +16,9 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
       },
       height: '326px',
       margin: 'auto',
-      marginTop,
-    }}>
+      marginTop
+    }}
+  >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
       <CardContent
         sx={{
@@ -26,22 +27,31 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           justifyContent: 'center',
           textAlign: 'center',
           color: '#fff'
-        }}>
-        <CardMedia image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture} alt={channelDetail?.snippet?.title}
+        }}
+      >
+        <CardMedia
+          image={
+            channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture
+          }
+          alt={channelDetail?.snippet?.title}
           sx={{
             borderRadius: '50%',
             height: '180px',
             width: '100%',
             mb: 2,
             border: '1px solid #e3e3e3'
-          }} />
-        <Typography variant="h6">
+          }}
+        />
+        <Typography variant='h6'>
           {channelDetail?.snippet?.title}
           <CheckCircle sx={{ fontSize: 14, color: 'gray', ml: '5px' }} />
         </Typography>
         {channelDetail?.statistics?.subscriberCount && (
           <Typography>
-            {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()} Subscribers
+            {parseInt(
+              channelDetail?.statistics?.subscriberCount
+            ).toLocaleString()}{' '}
+            Subscribers
           </Typography>
         )}
       </CardContent>
@@ -49,4 +59,4 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
   </Box>
 )
 
-export default ChannelCard  
+export default ChannelCard
